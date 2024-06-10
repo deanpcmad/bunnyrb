@@ -29,6 +29,7 @@ module Bunny
   autoload :Zone, "bunny/models/zone"
   autoload :StorageZone, "bunny/models/storage_zone"
   autoload :VideoLibrary, "bunny/models/video_library"
+  autoload :PullZone, "bunny/models/pull_zone"
 
   autoload :Record, "bunny/models/record"
   autoload :ZoneStatistic, "bunny/models/zone_statistic"
