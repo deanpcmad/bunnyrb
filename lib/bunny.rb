@@ -25,6 +25,7 @@ module Bunny
   autoload :Country, "bunny/models/country"
   autoload :Region, "bunny/models/region"
   autoload :Zone, "bunny/models/zone"
+  autoload :StorageZone, "bunny/models/storage_zone"
 
   autoload :Record, "bunny/models/record"
   autoload :ZoneStatistic, "bunny/models/zone_statistic"
