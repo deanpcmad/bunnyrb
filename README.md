@@ -73,6 +73,73 @@ Bunny::Zone.update_record zone: 123, record: 123, value: "1.0.0.1"
 Bunny::Zone.delete_record zone: 123, record: 123
 ```
 
+### Pull Zones
+
+```ruby
+# Retrieve a list of Pull Zone's
+Bunny::PullZone.list
+
+# Retrieve a pull zone
+Bunny::PullZone.retrieve id: 123
+
+# Create a pull zone
+# API Docs: https://docs.bunny.net/reference/pullzonepublic_add
+Bunny::PullZone.create(name: "mypullzone")
+
+# Update a pull zone
+# API Docs: https://docs.bunny.net/reference/pullzonepublic_updatepullzone
+Bunny::PullZone.update id: 123, EnableGeoZoneUS: true
+
+# Delete a pull zone
+Bunny::PullZone.delete id: 123
+
+# Purge a pull zone
+# API Docs: https://docs.bunny.net/reference/pullzonepublic_purgecache
+Bunny::PullZone.purge id: 123
+```
+
+### Storage Zones
+
+```ruby
+# Retrieve a list of Storage Zone's
+Bunny::StorageZone.list
+
+# Retrieve a storage zone
+Bunny::StorageZone.retrieve id: 123
+
+# Create a storage zone
+# API Docs: https://docs.bunny.net/reference/storagezonepublic_add
+Bunny::StorageZone.create(name: "mystoragezone", region: "UK", tier: "Standard")
+
+# Update a storage zone
+# API Docs: https://docs.bunny.net/reference/storagezonepublic_update
+Bunny::StorageZone.update id: 123, OriginUrl: "https://mysite.com"
+
+# Delete a storage zone
+Bunny::StorageZone.delete id: 123
+```
+
+### Video Libraries
+
+```ruby
+# Retrieve a list of Video Libraries
+Bunny::VideoLibrary.list
+
+# Retrieve a video library
+Bunny::VideoLibrary.retrieve id: 123
+
+# Create a video library
+# API Docs: https://docs.bunny.net/reference/videolibrarypublic_add
+Bunny::VideoLibrary.create(name: "myvideolibrary")
+
+# Update a video library
+# API Docs: https://docs.bunny.net/reference/videolibrarypublic_update
+Bunny::VideoLibrary.update id: 123, EnableDRM: true
+
+# Delete a video library
+Bunny::VideoLibrary.delete id: 123
+```
+
 ## Edge API
 
 The Edge API is for managing files on the Bunny Edge Storage Service.
