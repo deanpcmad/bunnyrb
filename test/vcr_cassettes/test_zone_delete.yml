@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.bunny.net/dnszone/217250
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      AccessKey:
+      - "<AUTHORIZATION>"
+      User-Agent:
+      - bunnyrb/v0.1.0 (github.com/deanpcmad/bunnyrb)
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      date:
+      - Mon, 10 Jun 2024 17:14:15 GMT
+      connection:
+      - keep-alive
+      server:
+      - BunnyCDN-UK1-886
+      cdn-pullzone:
+      - '308006'
+      cdn-uid:
+      - 3a60ca70-b89d-4cd5-a4b5-34a3468d7e0f
+      cdn-requestcountrycode:
+      - GB
+      cache-control:
+      - no-cache
+      pragma:
+      - no-cache
+      backend:
+      - '1'
+      cdn-proxyver:
+      - '1.04'
+      cdn-requestpullsuccess:
+      - 'True'
+      cdn-requestpullcode:
+      - '204'
+      cdn-cachedat:
+      - 06/10/2024 17:14:15
+      cdn-edgestorageid:
+      - '886'
+      cdn-status:
+      - '204'
+      cdn-requestid:
+      - 897c3e3752702d844914e486e37acbc6
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 10 Jun 2024 17:14:15 GMT
+recorded_with: VCR 6.2.0

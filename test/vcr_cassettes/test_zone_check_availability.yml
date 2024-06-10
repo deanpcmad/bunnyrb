@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bunny.net/dnszone/checkavailability
+    body:
+      encoding: UTF-8
+      string: '{"Domain":"deanpcmad.test"}'
+    headers:
+      AccessKey:
+      - "<AUTHORIZATION>"
+      User-Agent:
+      - bunnyrb/v0.1.0 (github.com/deanpcmad/bunnyrb)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 10 Jun 2024 17:28:33 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '18'
+      connection:
+      - keep-alive
+      server:
+      - BunnyCDN-UK1-886
+      cdn-pullzone:
+      - '308006'
+      cdn-uid:
+      - 3a60ca70-b89d-4cd5-a4b5-34a3468d7e0f
+      cdn-requestcountrycode:
+      - GB
+      cache-control:
+      - no-cache
+      pragma:
+      - no-cache
+      backend:
+      - '1'
+      cdn-proxyver:
+      - '1.04'
+      cdn-requestpullsuccess:
+      - 'True'
+      cdn-requestpullcode:
+      - '200'
+      cdn-cachedat:
+      - 06/10/2024 17:28:33
+      cdn-edgestorageid:
+      - '886'
+      cdn-requestid:
+      - e4f274ae2162da55bd9db7e49c78a402
+    body:
+      encoding: UTF-8
+      string: '{"Available":true}'
+  recorded_at: Mon, 10 Jun 2024 17:28:33 GMT
+recorded_with: VCR 6.2.0

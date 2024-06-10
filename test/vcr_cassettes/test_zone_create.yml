@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bunny.net/dnszone
+    body:
+      encoding: UTF-8
+      string: '{"Domain":"deanpcmad1.test"}'
+    headers:
+      AccessKey:
+      - "<AUTHORIZATION>"
+      User-Agent:
+      - bunnyrb/v0.1.0 (github.com/deanpcmad/bunnyrb)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Mon, 10 Jun 2024 17:05:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '439'
+      connection:
+      - keep-alive
+      server:
+      - BunnyCDN-UK1-886
+      cdn-pullzone:
+      - '308006'
+      cdn-uid:
+      - 3a60ca70-b89d-4cd5-a4b5-34a3468d7e0f
+      cdn-requestcountrycode:
+      - GB
+      cache-control:
+      - no-cache
+      pragma:
+      - no-cache
+      backend:
+      - '1'
+      cdn-proxyver:
+      - '1.04'
+      cdn-requestpullsuccess:
+      - 'True'
+      cdn-requestpullcode:
+      - '201'
+      cdn-cachedat:
+      - 06/10/2024 17:05:40
+      cdn-edgestorageid:
+      - '886'
+      cdn-requestid:
+      - 2e797a0b0b7b880868af5caeda9d04be
+    body:
+      encoding: UTF-8
+      string: '{"Id":217250,"Domain":"deanpcmad1.test","Records":[],"DateModified":"2024-06-10T17:05:37.8912171Z","DateCreated":"2024-06-10T17:05:37.8912171Z","NameserversDetected":true,"CustomNameserversEnabled":false,"Nameserver1":"kiki.bunny.net","Nameserver2":"coco.bunny.net","SoaEmail":"hostmaster@bunny.net","NameserversNextCheck":"2024-06-10T17:10:37.8912171Z","LoggingEnabled":false,"LoggingIPAnonymizationEnabled":true,"LogAnonymizationType":0}'
+  recorded_at: Mon, 10 Jun 2024 17:05:40 GMT
+recorded_with: VCR 6.2.0

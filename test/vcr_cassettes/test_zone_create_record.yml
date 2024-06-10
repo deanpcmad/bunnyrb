@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.bunny.net/dnszone/217249/records
+    body:
+      encoding: UTF-8
+      string: '{"name":"test2","type":"A","value":"1.1.1.1"}'
+    headers:
+      AccessKey:
+      - "<AUTHORIZATION>"
+      User-Agent:
+      - bunnyrb/v0.1.0 (github.com/deanpcmad/bunnyrb)
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Mon, 10 Jun 2024 17:49:56 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '513'
+      connection:
+      - keep-alive
+      server:
+      - BunnyCDN-UK1-886
+      cdn-pullzone:
+      - '308006'
+      cdn-uid:
+      - 3a60ca70-b89d-4cd5-a4b5-34a3468d7e0f
+      cdn-requestcountrycode:
+      - GB
+      cache-control:
+      - no-cache
+      pragma:
+      - no-cache
+      backend:
+      - '1'
+      cdn-proxyver:
+      - '1.04'
+      cdn-requestpullsuccess:
+      - 'True'
+      cdn-requestpullcode:
+      - '201'
+      cdn-cachedat:
+      - 06/10/2024 17:49:56
+      cdn-edgestorageid:
+      - '886'
+      cdn-status:
+      - '201'
+      cdn-requestid:
+      - 8d047bba5ce6c1ca3028c47a76a1107c
+    body:
+      encoding: UTF-8
+      string: '{"Id":3992424,"Type":0,"Ttl":0,"Value":"1.1.1.1","Name":"test2","Weight":0,"Priority":0,"Port":0,"Flags":0,"Tag":"","Accelerated":false,"AcceleratedPullZoneId":0,"LinkName":"","IPGeoLocationInfo":{"CountryCode":"AU","Country":"Australia","ASN":13335,"OrganizationName":"Cloudflare","City":"Mooloolabah"},"GeolocationInfo":null,"MonitorStatus":0,"MonitorType":0,"GeolocationLatitude":0.0,"GeolocationLongitude":0.0,"EnviromentalVariables":[],"LatencyZone":null,"SmartRoutingType":0,"Disabled":false,"Comment":null}'
+  recorded_at: Mon, 10 Jun 2024 17:49:57 GMT
+recorded_with: VCR 6.2.0
