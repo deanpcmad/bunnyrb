@@ -1,4 +1,6 @@
 require "faraday"
+require "faraday/multipart"
+require "marcel"
 
 require_relative "bunny/version"
 
@@ -29,5 +31,11 @@ module Bunny
 
   autoload :Record, "bunny/models/record"
   autoload :ZoneStatistic, "bunny/models/zone_statistic"
+
+  # Edge API
+  module Edge
+    autoload :Client, "bunny/edge/client"
+    autoload :Upload, "bunny/edge/models/upload"
+  end
 
 end

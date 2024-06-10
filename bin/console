@@ -15,6 +15,9 @@ require 'dotenv/load'
 
 Bunny.configure do |config|
   config.api_token = ENV["API_KEY"]
+
+  config.edge_api_token = ENV["EDGE_API_KEY"]
+  config.edge_region = ENV["EDGE_REGION"]
 end
 
 require "irb"

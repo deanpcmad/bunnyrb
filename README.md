@@ -73,6 +73,26 @@ Bunny::Zone.update_record zone: 123, record: 123, value: "1.0.0.1"
 Bunny::Zone.delete_record zone: 123, record: 123
 ```
 
+## Edge API
+
+The Edge API is for managing files on the Bunny Edge Storage Service.
+
+```ruby
+# List all files in a zone
+Bunny::Edge::Upload.list(zone: "myzone", path: "/path/to/files")
+
+# Create a file
+file = File.new("myfile.txt")
+response = Bunny::Edge::Upload.create(zone: "myzone", path: "/path/to/files", name: "myfile.txt", file: file)
+
+# Download a file
+# Returns a Tempfile
+Bunny::Edge::Upload.download(zone: "myzone", path: "/path/to/files", name: "myfile.txt")
+
+# Delete a file
+Bunny::Edge::Upload.delete(zone: "myzone", path: "/path/to/files", name: "myfile.txt")
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/deanpcmad/bunnyrb.

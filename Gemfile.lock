@@ -3,6 +3,8 @@ PATH
   specs:
     bunnyrb (0.1.0)
       faraday (~> 2.0)
+      faraday-multipart (~> 1.0)
+      marcel (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -10,9 +12,13 @@ GEM
     dotenv (3.1.2)
     faraday (2.9.1)
       faraday-net_http (>= 2.0, < 3.2)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (3.1.0)
       net-http
+    marcel (1.0.4)
     minitest (5.23.1)
+    multipart-post (2.4.1)
     net-http (0.4.1)
       uri
     rake (12.3.3)
