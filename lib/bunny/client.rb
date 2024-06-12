@@ -1,10 +1,8 @@
 module Bunny
   class Client
-
     BASE_URL = "https://api.bunny.net"
 
     class << self
-
       def connection
         @connection ||= Faraday.new(BASE_URL) do |conn|
           conn.headers = {
@@ -69,6 +67,5 @@ module Bunny
         response
       end
     end
-
   end
 end

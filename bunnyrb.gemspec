@@ -3,8 +3,8 @@ require_relative 'lib/bunny/version'
 Gem::Specification.new do |spec|
   spec.name          = "bunnyrb"
   spec.version       = Bunny::VERSION
-  spec.authors       = ["Dean Perry"]
-  spec.email         = ["dean@deanpcmad.com"]
+  spec.authors       = [ "Dean Perry" ]
+  spec.email         = [ "dean@deanpcmad.com" ]
 
   spec.summary       = "A Ruby library for the Bunny APIs"
   spec.homepage      = "https://deanpcmad.com"
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = [ "lib" ]
 
   spec.add_dependency "faraday", "~> 2.0"
   spec.add_dependency "faraday-multipart", "~> 1.0"

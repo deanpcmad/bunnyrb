@@ -1,8 +1,6 @@
 module Bunny
   class PullZone < Object
-
     class << self
-
       def list
         response = Client.get_request("pullzone")
         Collection.from_response(response, type: PullZone)
@@ -30,8 +28,6 @@ module Bunny
       def purge(id:)
         Client.post_request("pullzone/#{id}/purgeCache", body: {})
       end
-
     end
-
   end
 end

@@ -1,9 +1,7 @@
 module Bunny
   module Edge
     class Client
-
       class << self
-
         def url
           raise "An Edge Region must be specified" unless Bunny.config.edge_region
           case Bunny.config.edge_region.downcase
@@ -110,7 +108,6 @@ module Bunny
           response
         end
       end
-
     end
   end
 end

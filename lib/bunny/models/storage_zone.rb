@@ -1,8 +1,6 @@
 module Bunny
   class StorageZone < Object
-
     class << self
-
       def list
         response = Client.get_request("storagezone")
         Collection.from_response(response, type: StorageZone)
@@ -25,8 +23,6 @@ module Bunny
       def delete(id:)
         Client.delete_request("storagezone/#{id}")
       end
-
     end
-
   end
 end

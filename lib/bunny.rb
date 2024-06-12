@@ -5,7 +5,6 @@ require "marcel"
 require_relative "bunny/version"
 
 module Bunny
-
   autoload :Configuration, "bunny/configuration"
   autoload :Client, "bunny/client"
   autoload :Collection, "bunny/collection"
@@ -39,5 +38,4 @@ module Bunny
     autoload :Client, "bunny/edge/client"
     autoload :Upload, "bunny/edge/models/upload"
   end
-
 end

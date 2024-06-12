@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ZoneTest < Minitest::Test
-
   def test_zone_list
     zones = Bunny::Zone.list
     assert_equal Bunny::Collection, zones.class
@@ -59,5 +58,4 @@ class ZoneTest < Minitest::Test
 
     assert record
   end
-
 end

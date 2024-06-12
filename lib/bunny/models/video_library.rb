@@ -1,8 +1,6 @@
 module Bunny
   class VideoLibrary < Object
-
     class << self
-
       def list
         response = Client.get_request("videolibrary")
         Collection.from_response(response, type: VideoLibrary)
@@ -26,8 +24,6 @@ module Bunny
       def delete(id:)
         Client.delete_request("videolibrary/#{id}")
       end
-
     end
-
   end
 end

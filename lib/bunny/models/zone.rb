@@ -1,8 +1,6 @@
 module Bunny
   class Zone < Object
-
     class << self
-
       def list
         response = Client.get_request("dnszone")
         Collection.from_response(response, type: Zone, key: "Items")
@@ -54,8 +52,6 @@ module Bunny
       def delete_record(zone:, record:)
         Client.delete_request("dnszone/#{zone}/records/#{record}")
       end
-
     end
-
   end
 end
