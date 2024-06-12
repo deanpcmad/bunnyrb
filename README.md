@@ -21,6 +21,7 @@ and then configure it like below.
 Bunny.configure do |config|
   config.api_token = ENV["BUNNY_API_KEY"]
 
+  config.edge_name = ENV["BUNNY_EDGE_NAME"]
   config.edge_region = ENV["BUNNY_EDGE_REGION"]
   config.edge_api_token = ENV["BUNNY_EDGE_API_TOKEN"]
 end

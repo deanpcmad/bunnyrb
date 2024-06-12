@@ -4,12 +4,12 @@ module Bunny
 
       class << self
 
-        def list(zone:, path:)
+        def list(zone: Bunny.config.edge_name, path:)
           response = Edge::Client.get_request("#{zone}/#{path}")
           Collection.from_response(response, type: Upload)
         end
 
-        def create(zone:, path:, name:, file:)
+        def create(zone: Bunny.config.edge_name, path:, name:, file:)
           headers = {
             "Content-Type" => Marcel::MimeType.for(file),
             "Content-Length" => file.size.to_s
@@ -18,7 +18,7 @@ module Bunny
           response.success?
         end
 
-        def download(zone:, path:, name:)
+        def download(zone: Bunny.config.edge_name, path:, name:)
           response = Edge::Client.get_request([zone, path, name].join("/"))
 
           tempfile = Tempfile.new
