@@ -19,7 +19,10 @@ and then configure it like below.
 
 ```ruby
 Bunny.configure do |config|
-  config.api_token = ENV["BUNNT_API_KEY"]
+  config.api_token = ENV["BUNNY_API_KEY"]
+
+  config.edge_region = ENV["BUNNY_EDGE_REGION"]
+  config.edge_api_token = ENV["BUNNY_EDGE_API_TOKEN"]
 end
 ```
 
