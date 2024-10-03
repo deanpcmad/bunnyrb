@@ -7,16 +7,16 @@ module Bunny
           Collection.from_response(response, type: Upload)
         end
 
-        def create(zone: Bunny.config.edge_name, path:, name:, file:)
+        def create(zone: Bunny.config.edge_name, path: nil, name:, file:)
           headers = {
-            "Content-Type" => Marcel::MimeType.for(file),
-            "Content-Length" => file.size.to_s
+            "Content-Length" => file.size.to_s,
+            "Content-Type" => Marcel::MimeType.for(file)
           }
           response = Edge::Client.put_request([ zone, path, name ].join("/"), body: file, headers: headers)
           response.success?
         end
 
-        def download(zone: Bunny.config.edge_name, path:, name:)
+        def download(zone: Bunny.config.edge_name, path: nil, name:)
           response = Edge::Client.get_request([ zone, path, name ].join("/"))
 
           tempfile = Tempfile.new
@@ -27,7 +27,7 @@ module Bunny
           tempfile
         end
 
-        def delete(zone:, path:, name:)
+        def delete(zone: Bunny.config.edge_name, path: nil, name: nil)
           response = Edge::Client.delete_request([ zone, path, name ].join("/"))
           response.success?
         end
