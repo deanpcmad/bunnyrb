@@ -2,7 +2,7 @@ module Bunny
   module Edge
     class Client
       class << self
-        def url
+        def edge_url
           region_urls = {
             "de" => "https://storage.bunnycdn.com",
             "uk" => "https://uk.storage.bunnycdn.com",
@@ -20,7 +20,7 @@ module Bunny
         end
 
         def connection
-          @connection ||= Faraday.new(url) do |conn|
+          @connection ||= Faraday.new(edge_url) do |conn|
             conn.headers["AccessKey"] = Bunny.config.edge_api_token
             conn.headers["User-Agent"] = "bunnyrb/v#{VERSION} (github.com/deanpcmad/bunnyrb)"
             conn.request :json
@@ -29,7 +29,7 @@ module Bunny
         end
 
         def upload_connection
-          @connection ||= Faraday.new(url) do |conn|
+          @connection ||= Faraday.new(edge_url) do |conn|
             conn.headers["AccessKey"] = Bunny.config.edge_api_token
             conn.headers["User-Agent"] = "bunnyrb/v#{VERSION} (github.com/deanpcmad/bunnyrb)"
             conn.request :multipart, flat_encode: true
