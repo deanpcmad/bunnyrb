@@ -3,57 +3,36 @@ module Bunny
     class Client
       class << self
         def url
-          raise "An Edge Region must be specified" unless Bunny.config.edge_region
-          case Bunny.config.edge_region.downcase
+          region_urls = {
+            "de" => "https://storage.bunnycdn.com",
+            "uk" => "https://uk.storage.bunnycdn.com",
+            "ny" => "https://ny.storage.bunnycdn.com",
+            "la" => "https://la.storage.bunnycdn.com",
+            "sg" => "https://sg.storage.bunnycdn.com",
+            "se" => "https://se.storage.bunnycdn.com",
+            "br" => "https://br.storage.bunnycdn.com",
+            "sa" => "https://jh.storage.bunnycdn.com",
+            "syd" => "https://syd.storage.bunnycdn.com"
+          }
 
-          when "de"
-            "https://storage.bunnycdn.com"
-          when "uk"
-            "https://uk.storage.bunnycdn.com"
-          when "ny"
-            "https://ny.storage.bunnycdn.com"
-          when "la"
-            "https://la.storage.bunnycdn.com"
-          when "sg"
-            "https://sg.storage.bunnycdn.com"
-          when "se"
-            "https://se.storage.bunnycdn.com"
-          when "br"
-            "https://br.storage.bunnycdn.com"
-          when "sa"
-            "https://jh.storage.bunnycdn.com"
-          when "syd"
-            "https://syd.storage.bunnycdn.com"
-          else
-            "https://storage.bunnycdn.com"
-          end
+          region = Bunny.config.edge_region&.downcase
+          region_urls.fetch(region, "https://storage.bunnycdn.com")
         end
 
         def connection
           @connection ||= Faraday.new(url) do |conn|
-            conn.headers = {
-              "AccessKey" => Bunny.config.edge_api_token,
-              "User-Agent" => "bunnyrb/v#{VERSION} (github.com/deanpcmad/bunnyrb)"
-            }
-
+            conn.headers["AccessKey"] = Bunny.config.edge_api_token
+            conn.headers["User-Agent"] = "bunnyrb/v#{VERSION} (github.com/deanpcmad/bunnyrb)"
             conn.request :json
-
-            conn.response :json, content_type: "application/json"
+            conn.response :json, content_type: /\bjson$/
           end
         end
 
         def upload_connection
           @connection ||= Faraday.new(url) do |conn|
-            conn.headers = {
-              "AccessKey" => Bunny.config.edge_api_token,
-              "User-Agent" => "bunnyrb/v#{VERSION} (github.com/deanpcmad/bunnyrb)"
-            }
-
+            conn.headers["AccessKey"] = Bunny.config.edge_api_token
+            conn.headers["User-Agent"] = "bunnyrb/v#{VERSION} (github.com/deanpcmad/bunnyrb)"
             conn.request :multipart, flat_encode: true
-
-            # conn.request :json
-
-            # conn.response :json, content_type: "application/json"
           end
         end
 
@@ -61,17 +40,9 @@ module Bunny
           handle_response connection.get(url, params, headers)
         end
 
-        # def post_request(url, body: {}, headers: {})
-        #   handle_response connection.post(url, body, headers)
-        # end
-
         def put_request(url, body:, headers: {})
           handle_response upload_connection.put(url, body, headers)
         end
-
-        # def patch_request(url, body:, headers: {})
-        #   handle_response connection.patch(url, body, headers)
-        # end
 
         def delete_request(url, headers: {})
           handle_response connection.delete(url, headers)
